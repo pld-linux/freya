@@ -32,10 +32,10 @@ Source0:	https://github.com/studentkittens/Freya/tarball/master/%{name}.tgz
 %{?with_avahi:BuildRequires:	avahi-glib-devel}
 BuildRequires:	cmake
 BuildRequires:	glibmm-devel
-BuildRequires:	glyr-devel
+%{?with_glyr:BuildRequires:	glyr-devel}
 BuildRequires:	gtkmm3-devel
 BuildRequires:	libmpdclient-devel
-BuildRequires:	libnotify-devel
+%{?with_libnotify:BuildRequires:	libnotify-devel}
 BuildRequires:	libxml2-devel
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
